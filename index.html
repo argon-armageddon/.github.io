@@ -177,8 +177,8 @@ methods: {
      if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
 
     this.scrollToSection(this.activeSection, true);
-    gsap.from('h1', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
-    gsap.from('p', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
+    gsap.from('h1', {ease: "power3.out", delay: 0.5, duration: 0.6, opacity: 0, x: -30});
+    gsap.from('p', { ease: "power3.out", delay: 0.5, duration: 0.4, opacity: 0, x: -30});
   },
   moveUp() {
     this.inMove = true;
@@ -187,8 +187,8 @@ methods: {
     if(this.activeSection > this.offsets.length - 1) this.activeSection = 0;
 
     this.scrollToSection(this.activeSection, true);
-    gsap.from('h1', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
-    gsap.from('p', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
+    gsap.from('h1', {ease: "power3.out", delay: 0.5, duration: 0.6, opacity: 0, x: -30});
+    gsap.from('p', { ease: "power3.out", delay: 0.5, duration: 0.4, opacity: 0, x: -30});
   },
   scrollToSection(id, force = false) {
     if(this.inMove && !force) return false;
@@ -243,8 +243,8 @@ destroyed() {
 });
   </script>
   <script>
-    gsap.from('h1', {ease: "power3.out", delay: 0.3, duration: 0.6, opacity: 0, y: -30});
-    gsap.from('p', { ease: "power3.out", delay: 0.3, duration: 0.4, opacity: 0, y: -30});
+    gsap.from('h1', {ease: "power3.out", delay: 0.5, duration: 0.6, opacity: 0, x: -30});
+    gsap.from('p', { ease: "power3.out", delay: 0.5, duration: 0.4, opacity: 0, x: -30});
   </script>
 </body>
 </html>
