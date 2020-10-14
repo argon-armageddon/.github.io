@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue.js Fullpage Scroll</title>
-  
+
   <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js " ></script>
 </head>
 <body>
 <style media="screen">
@@ -25,20 +26,21 @@ h2 {
   height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /*justify-content: center;*/
+  align-items: left;
   flex-direction: column;
 }
 
 h1 {
   font-size: 6em;
   margin: 0;
-  text-align: center;
+  text-align: left;
   padding: 0 1rem;
 }
 
 p {
   font-size: 1em;
+  padding: 0 1rem;
 }
 
 .fullpage a {
@@ -112,8 +114,8 @@ h1.black {
       </span>
     </div>
     <section class="fullpage blue">
-      <h1>Vue.js Fullpage Scroll</h1>
-      <p>by <a href="https://webdeasy.de/?referer=cp-NVOEBL" target="_blank">WebDEasy</a></p>
+      <h1>natur erleben!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
     <section class="fullpage black">
       <h1>Section 2</h1>
@@ -172,9 +174,11 @@ methods: {
     this.inMove = true;
     this.activeSection--;
 
-    if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
+     if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
 
     this.scrollToSection(this.activeSection, true);
+    gsap.from('h1', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
+    gsap.from('p', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
   },
   moveUp() {
     this.inMove = true;
@@ -183,6 +187,8 @@ methods: {
     if(this.activeSection > this.offsets.length - 1) this.activeSection = 0;
 
     this.scrollToSection(this.activeSection, true);
+    gsap.from('h1', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
+    gsap.from('p', {delay: 0.3, duration: 0.6, opacity: 0, x: 50});
   },
   scrollToSection(id, force = false) {
     if(this.inMove && !force) return false;
@@ -194,7 +200,7 @@ methods: {
 
     setTimeout(() => {
       this.inMove = false;
-    }, 400);
+    }, 800);
 
   },
   touchStart(e) {
@@ -236,6 +242,9 @@ destroyed() {
 }
 });
   </script>
+  <script>
+    gsap.from('h1', {ease: "power3.out", delay: 0.3, duration: 0.6, opacity: 0, y: -30});
+    gsap.from('p', { ease: "power3.out", delay: 0.3, duration: 0.4, opacity: 0, y: -30});
+  </script>
 </body>
 </html>
-
