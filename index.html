@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue.js Fullpage Scroll</title>
-  <meta name="theme-color" content="#ab4545" />
+  <!meta name="theme-color" content="#ab4545" />
   <script src="https://unpkg.com/vue"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js " ></script>
 </head>
@@ -177,7 +177,7 @@ methods: {
      if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
 
     this.scrollToSection(this.activeSection, true);
-    gsap.from('h1', {ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: 30});
+    gsap.from('h1', {ease: "power3.out", delay: 0.65, duration: 0.5, opacity: 0, y: 30});
     gsap.from('p', { ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: 30});
   },
   moveUp() {
@@ -187,7 +187,7 @@ methods: {
     if(this.activeSection > this.offsets.length - 1) this.activeSection = 0;
 
     this.scrollToSection(this.activeSection, true);
-    gsap.from('h1', {ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: 30});
+    gsap.from('h1', {ease: "power3.out", delay: 0.65, duration: 0.5, opacity: 0, y: 30});
     gsap.from('p', { ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: 30});
   },
   scrollToSection(id, force = false) {
@@ -243,7 +243,7 @@ destroyed() {
 });
   </script>
   <script>
-    gsap.from('h1', {ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: 30});
+    gsap.from('h1', {ease: "power3.out", delay: 0.65, duration: 0.5, opacity: 0, y: 30});
     gsap.from('p', { ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: 30});
   </script>
 </body>
