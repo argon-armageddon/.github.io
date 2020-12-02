@@ -38,8 +38,8 @@
       <p>Tutorial <a href="https://webdeasy.de/en/programming-vue-js-fullpage-scroll/?referer=cp-NVOEBL" target="_blank">here</a></p>
     </section>
   </div>
-  <script>
-  var app = new Vue({
+<script>
+var app = new Vue({
 el: '#app',
 data: {
   inMove: false,
@@ -82,11 +82,10 @@ methods: {
     this.inMove = true;
     this.activeSection--;
 
-     if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
+    if(this.activeSection < 0) this.activeSection = this.offsets.length - 1;
 
     this.scrollToSection(this.activeSection, true);
-    gsap.from('h1', {ease: "power3.out", delay: 0.65, duration: 0.5, opacity: 0, y: -30});
-    gsap.from('p', { ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: -30});
+
   },
   moveUp() {
     this.inMove = true;
@@ -95,8 +94,7 @@ methods: {
     if(this.activeSection > this.offsets.length - 1) this.activeSection = 0;
 
     this.scrollToSection(this.activeSection, true);
-    gsap.from('h1', {ease: "power3.out", delay: 0.65, duration: 0.5, opacity: 0, y: 30});
-    gsap.from('p', { ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: 30});
+
   },
   scrollToSection(id, force = false) {
     if(this.inMove && !force) return false;
@@ -109,7 +107,8 @@ methods: {
     setTimeout(() => {
       this.inMove = false;
     }, 800);
-
+    gsap.from('h1', {ease: "power3.out", delay: 0.65, duration: 0.5, opacity: 0, y: 30});
+    gsap.from('p', { ease: "power3.out", delay: 0.7, duration: 0.5, opacity: 0, y: -0});
   },
   touchStart(e) {
     e.preventDefault();
